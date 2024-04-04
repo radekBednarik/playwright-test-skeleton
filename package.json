@@ -27,5 +27,13 @@
   "dependencies": {
     "chalk": "^4.1.2",
     "fs-extra": "^11.2.0"
-  }
+  },
+  "files": [
+    "bin/**/*",
+    "templates/**/*",
+    "package.json",
+    "README.md",
+    "LICENSE"
+
+  ]
 }
