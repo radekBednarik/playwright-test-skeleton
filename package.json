@@ -25,7 +25,7 @@
     "playwright-skeleton-ts": "bin/playwright-skeleton-ts.js"
   },
   "dependencies": {
-    "chalk": "^5.3.0",
+    "chalk": "^4.1.2",
     "fs-extra": "^11.2.0"
   }
 }
