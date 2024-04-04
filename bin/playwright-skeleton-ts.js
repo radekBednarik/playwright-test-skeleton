@@ -45,6 +45,6 @@ copy(templateDir, projectDir, (err) => {
 
   console.log(chalk.green("Installing Playwright browser binaries..."));
   execSync("npx playwright install", opts);
-});
 
-console.log(chalk.blue("\nSkeleton project created"));
+  console.log(chalk.blue("\nSkeleton project created"));
+});
