@@ -19,7 +19,7 @@ copy(templateDir, projectDir, (err) => {
   const opts = { cwd: projectDir };
 
   // init git repo
-  execSync("git init && git branch -m main", opts);
+  execSync("git init", opts);
 
   // install deps
   execSync("npm install", opts);
@@ -34,4 +34,7 @@ copy(templateDir, projectDir, (err) => {
     execSync("npx playwright install-deps", opts);
   }
   execSync("npx playwright install", opts);
+  console.log("Playwright setup finished");
 });
+
+console.log("Skeleton project created");
