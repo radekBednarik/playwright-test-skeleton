@@ -21,10 +21,9 @@ console.log("Creating skeleton project...");
 
 // init git repo
 execSync("git init && git branch -m main", opts);
-console.log("git repo initialized");
 
 // install deps
-execSync("npm i", opts);
+execSync("npm install", opts);
 console.log("basic deps installed");
 
 // create default precommit hooks
