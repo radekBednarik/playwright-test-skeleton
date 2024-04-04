@@ -1,6 +1,6 @@
 {
   "name": "playwright-test-skeleton",
-  "version": "0.1.5",
+  "version": "0.1.6-0",
   "description": "Package for creating Playwright Test skeleton project. Includes default linter, formatter and precommit-hooks settings.",
   "repository": {
     "type": "git",
@@ -34,6 +34,5 @@
     "package.json",
     "README.md",
     "LICENSE"
-
   ]
 }
