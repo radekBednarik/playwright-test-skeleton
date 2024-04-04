@@ -23,7 +23,7 @@ copy(templateDir, projectDir, (err) => {
 
   // init git repo with branch name as main
   console.log(chalk.green("Setting up git repo"));
-  execSync("git config init.defaultBranch main && git init", opts);
+  execSync("git init && git config init.defaultBranch main ", opts);
 
   // install deps
   console.log(chalk.green("Running npm install"));
