@@ -4,8 +4,7 @@ const { join } = require("path");
 const { execSync } = require("child_process");
 const { platform } = require("os");
 const { copy } = require("fs-extra");
-
-const chalk = import("chalk");
+const chalk = require("chalk");
 
 const projectDir = process.cwd();
 const templateDir = join(__dirname, "../templates/ts");
