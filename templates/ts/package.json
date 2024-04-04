@@ -1,0 +1,20 @@
+{
+  "name": "playwright-skeleton-ts",
+  "version": "0.0.1",
+  "description": "Playwright Test skeleton project. Contains basic default setup for Playwright Test, formatting, linting and precommit hooks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-playwright": "^1.5.4",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.3"
+  }
+}

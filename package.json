@@ -1,12 +1,26 @@
 {
   "name": "playwright-test-skeleton",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Package for creating Playwright Test skeleton project. Includes default linter, formatter and precommit-hooks settings.",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh@github.com:radekBednarik/playwright-test-skeleton.git"
+  },
+  "homepage": "https://github.com/radekBednarik/playwright-test-skeleton",
+  "keywords": [
+    "playwright",
+    "test",
+    "skeleton",
+    "project",
+    "typescript"
+  ],
+  "author": "Radek Bednarik<radek.bednarik@tesena.com>",
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "bin": {
+    "playwright-skeleton-ts": "bin/playwright-skeleton-ts.js"
+  }
 }
