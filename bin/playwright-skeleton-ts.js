@@ -16,7 +16,7 @@ copy(templateDir, projectDir, (err) => {
       `Copying from ${templateDir} to ${projectDir} failed with error: ${err}`
     );
 
-  const opts = { cwd: projectDir, stdio: "inherit" };
+  const opts = { cwd: projectDir };
 
   // init git repo
   execSync("git init && git branch -m main", opts);
