@@ -18,8 +18,8 @@ copy(templateDir, projectDir, (err) => {
 
   const opts = { cwd: projectDir };
 
-  // init git repo
-  execSync("git init", opts);
+  // init git repo with branch name as main
+  execSync("git config init.defaultBranch main && git init", opts);
 
   // install deps
   execSync("npm install", opts);
