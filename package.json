@@ -22,5 +22,8 @@
   },
   "bin": {
     "playwright-skeleton-ts": "bin/playwright-skeleton-ts.js"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0"
   }
 }
