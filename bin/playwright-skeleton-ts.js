@@ -35,7 +35,7 @@ const adjustPackage = () => {
   pJson["lint-staged"]["*.{js,ts}"] = ["eslint --cache", "prettier --write"];
   pJson["lint-staged"]["*.{md,json}"] = "prettier --write";
 
-  writeFileSync(join(projectDir, "package.json"), JSON.stringify(pJson));
+  writeFileSync(join(projectDir, "package.json"), JSON.stringify(pJson, null, 2));
 };
 
 console.log(chalk.blue("Creating skeleton project...\n"));
