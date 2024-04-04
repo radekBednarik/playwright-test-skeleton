@@ -4,7 +4,7 @@
   "description": "Package for creating Playwright Test skeleton project. Includes default linter, formatter and precommit-hooks settings.",
   "repository": {
     "type": "git",
-    "url": "git+ssh@github.com:radekBednarik/playwright-test-skeleton.git"
+    "url": "git+ssh://git@github.com:radekBednarik/playwright-test-skeleton.git"
   },
   "homepage": "https://github.com/radekBednarik/playwright-test-skeleton",
   "keywords": [
