@@ -22,26 +22,28 @@ copy(templateDir, projectDir, (err) => {
   const opts = { cwd: projectDir };
 
   // init git repo with branch name as main
-  console.log(chalk.green("Setting up git repo"));
-  execSync("git init && git config init.defaultBranch main ", opts);
+  console.log(chalk.green("Setting up git repo..."));
+  execSync("git init", opts);
 
   // install deps
-  console.log(chalk.green("Running npm install"));
+  console.log(chalk.green("Running npm install..."));
   execSync("npm install", opts);
 
   // create default precommit hooks
-  console.log(chalk.green("Setting up precommit hooks"));
+  console.log(chalk.green("Setting up precommit hooks..."));
   execSync("npx mrm@2 lint-staged", opts);
 
   // finish playwright setup
-  if (platform === "linux") {
+  if (platform() === "linux") {
     console.log(
-      chalk.green("Linux platform detected, setting up needed linux packages")
+      chalk.green(
+        "Linux platform detected, setting up needed linux packages..."
+      )
     );
     execSync("npx playwright install-deps", opts);
   }
 
-  console.log(chalk.green("Installing Playwright browser binaries"));
+  console.log(chalk.green("Installing Playwright browser binaries..."));
   execSync("npx playwright install", opts);
 });
 
