@@ -4,7 +4,7 @@
 const { join } = require("path");
 const { execSync } = require("child_process");
 const { platform } = require("os");
-const { copySync, readFileSync, writeFileSync } = require("fs-extra");
+const { copySync, readFileSync, writeFileSync, renameSync } = require("fs-extra");
 const chalk = require("chalk");
 
 const projectDir = process.cwd();
@@ -38,9 +38,14 @@ const adjustPackage = () => {
   writeFileSync(join(projectDir, "package.json"), JSON.stringify(pJson, null, 2));
 };
 
+const renameFile = (originName, newName) => {
+  renameSync(join(projectDir, originName), join(projectDir, newName))
+}
+
 console.log(chalk.blue("Creating skeleton project...\n"));
 
 copySync(templateDir, projectDir);
+renameFile("gitignore", ".gitignore");
 
 // init git repo with branch name as main
 console.log(chalk.green("Setting up git repo..."));

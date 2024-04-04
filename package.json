@@ -29,9 +29,8 @@
     "fs-extra": "^11.2.0"
   },
   "files": [
-    "bin/**/*",
-    "templates/**/*",
-    "templates/ts/.gitignore",
+    "bin",
+    "templates",
     "package.json",
     "README.md",
     "LICENSE"
