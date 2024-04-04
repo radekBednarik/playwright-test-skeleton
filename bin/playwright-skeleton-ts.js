@@ -33,6 +33,8 @@ copy(templateDir, projectDir, (err) => {
   console.log(chalk.green("Setting up precommit hooks..."));
   execSync("npx mrm@2 lint-staged", opts);
 
+  // TODO: we have to modify package.json to set correct lint-staged props
+
   // finish playwright setup
   if (platform() === "linux") {
     console.log(
