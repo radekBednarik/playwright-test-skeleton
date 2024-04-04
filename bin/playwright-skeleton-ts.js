@@ -8,6 +8,8 @@ const { copy } = require("fs-extra");
 const projectDir = process.cwd();
 const templateDir = join(__dirname, "../templates/ts");
 
+console.log("Creating skeleton project...");
+
 copy(templateDir, projectDir, (err) => {
   if (err)
     throw Error(
@@ -15,8 +17,6 @@ copy(templateDir, projectDir, (err) => {
     );
 
   const opts = { cwd: projectDir, stdio: "inherit" };
-
-  console.log("Creating skeleton project...");
 
   // init git repo
   execSync("git init && git branch -m main", opts);
