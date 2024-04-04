@@ -24,7 +24,7 @@ execSync("git init && git branch -m main", opts);
 console.log("git repo initialized");
 
 // install deps
-execSync("npm ci", opts);
+execSync("npm i", opts);
 console.log("basic deps installed");
 
 // create default precommit hooks

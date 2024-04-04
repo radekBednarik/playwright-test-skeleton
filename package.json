@@ -18,7 +18,8 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx playwright-test-skeleton",
+    "cleanup": "rm -rf __test-area__"
   },
   "bin": {
     "playwright-skeleton-ts": "bin/playwright-skeleton-ts.js"
