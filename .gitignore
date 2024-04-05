@@ -183,3 +183,4 @@ dist
 html-report
 test-results
 __test-area__
+templates/**/node_modules
