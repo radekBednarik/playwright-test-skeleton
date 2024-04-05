@@ -22,7 +22,7 @@
     "cleanup": "rm -rf __test-area__"
   },
   "bin": {
-    "playwright-skeleton-ts": "bin/playwright-skeleton-ts.js"
+    "main": "bin/main.js"
   },
   "dependencies": {
     "chalk": "^4.1.2",
@@ -35,5 +35,9 @@
     "package.json",
     "README.md",
     "LICENSE"
-  ]
+  ],
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5"
+  }
 }

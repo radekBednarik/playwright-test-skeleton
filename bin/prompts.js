@@ -1,9 +1,9 @@
 const prompts = require("prompts");
 
-export const cliPrompt = async () => {
+const cliPrompt = async () => {
   const questions = [
     {
-      type: "multiselect",
+      type: "select",
       name: "language",
       message: "Select language",
       choices: [
@@ -12,15 +12,18 @@ export const cliPrompt = async () => {
       ],
     },
     {
-      type: "multiselect",
+      type: "select",
       name: "precommitHooks",
       message: "Set up precommit hooks for linting and formatting?",
       choices: [
         { title: "Yes", value: true },
         { title: "No", value: false },
       ],
+      initial: 0,
     },
   ];
 
-  return await prompts[questions];
+  return await prompts(questions);
 };
+
+module.exports = { cliPrompt };
