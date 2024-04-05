@@ -2,11 +2,12 @@
 
 This package will create a basic template of Playwright Test project with following properties:
 
-- language is Typescript
+- language is Typescript or JavaScript
 - ESLint config file for linting is created
 - Prettier is installed
-- Eslint and Prettier git precommit hooks are created
+- Eslint and Prettier git precommit hooks are created, if user wants to
 - basic example tests are created in `/tests` folder
+- default Playwright Test configuration file is created
 
 ## Preconditions
 
@@ -18,6 +19,7 @@ This package will create a basic template of Playwright Test project with follow
 
 - open you shell and switch to the folder, where you want to have your test project files
 - run `npx playwright-test-skeleton`
+- go thru CLI prompts to choose from language and precommit hooks options
 - in case you are on Linux, you will have to provide your `sudo` password when installing Playwright linux dependencies
 
 ## Verify
