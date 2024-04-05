@@ -13,7 +13,6 @@ const { cliPrompt } = require("./prompts");
 const chalk = require("chalk");
 
 const projectDir = process.cwd();
-const templateDir = join(__dirname, "../templates/ts");
 const opts = { cwd: projectDir };
 
 const adjustPackage = () => {
@@ -52,41 +51,51 @@ const renameFile = (originName, newName) => {
 
 const main = async () => {
   const choices = await cliPrompt();
-  console.log(JSON.stringify(choices));
+  const lang = choices.language;
+  const hooks = choices.precommitHooks;
+
+  console.log(chalk.blue("\nCreating skeleton project...\n"));
+
+  const templateDir = join(
+    __dirname,
+    lang === "ts" ? "../templates/ts" : "../templates/js"
+  );
+
+  copySync(templateDir, projectDir);
+  renameFile("gitignore", ".gitignore");
+
+  // init git repo with branch name as main
+  console.log(chalk.green("Setting up git repo..."));
+  execSync("git init", opts);
+
+  // install deps
+  console.log(chalk.green("Running npm install..."));
+  execSync("npm install", opts);
+
+  // create default precommit hooks
+  if (hooks) {
+    console.log(chalk.green("Setting up precommit hooks..."));
+    execSync("npx mrm@2 lint-staged", opts);
+    // adjust package.json lint-staged prop to have needed values
+    adjustPackage();
+  }
+
+  // finish playwright setup
+  if (platform() === "linux") {
+    console.log(
+      chalk.green(
+        "Linux platform detected, setting up needed linux packages..."
+      )
+    );
+    execSync("npx playwright install-deps", opts);
+  }
+
+  console.log(chalk.green("Installing Playwright browser binaries..."));
+  execSync("npx playwright install", opts);
+
+  console.log(chalk.blue("\nSkeleton project created"));
 };
 
 (async () => {
   await main();
 })();
-
-// console.log(chalk.blue("Creating skeleton project...\n"));
-
-// copySync(templateDir, projectDir);
-// renameFile("gitignore", ".gitignore");
-
-// // init git repo with branch name as main
-// console.log(chalk.green("Setting up git repo..."));
-// execSync("git init", opts);
-
-// // install deps
-// console.log(chalk.green("Running npm install..."));
-// execSync("npm install", opts);
-
-// // create default precommit hooks
-// console.log(chalk.green("Setting up precommit hooks..."));
-// execSync("npx mrm@2 lint-staged", opts);
-// // adjust package.json lint-staged prop to have needed values
-// adjustPackage();
-
-// // finish playwright setup
-// if (platform() === "linux") {
-//   console.log(
-//     chalk.green("Linux platform detected, setting up needed linux packages...")
-//   );
-//   execSync("npx playwright install-deps", opts);
-// }
-
-// console.log(chalk.green("Installing Playwright browser binaries..."));
-// execSync("npx playwright install", opts);
-
-// console.log(chalk.blue("\nSkeleton project created"));
