@@ -1,5 +1,8 @@
 const prompts = require("prompts");
 
+// can be overriden by argv
+prompts.override(require("yargs").argv);
+
 const cliPrompt = async () => {
   const questions = [
     {
