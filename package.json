@@ -12,13 +12,15 @@
     "test",
     "skeleton",
     "project",
-    "typescript"
+    "typescript",
+    "template",
+    "nodejs"
   ],
   "author": "Radek Bednarik<radek.bednarik@tesena.com>",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright-test-skeleton",
+    "test": "npm link && mkdir __test-area__ && cd __test-area__ && npm link playwright-test-skeleton && npx playwright-test-skeleton --language=ts --precommitHooks=true && npx playwright test",
     "cleanup": "rm -rf __test-area__"
   },
   "bin": {
@@ -27,7 +29,8 @@
   "dependencies": {
     "chalk": "^4.1.2",
     "fs-extra": "^11.2.0",
-    "prompts": "^2.4.2"
+    "prompts": "^2.4.2",
+    "yargs": "^17.7.2"
   },
   "files": [
     "bin",
