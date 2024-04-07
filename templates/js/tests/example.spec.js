@@ -1,26 +1,30 @@
 import { test, expect } from "@playwright/test";
+import DocsIntro from "./docs.intro.pom";
+import Homepage from "./homepage.pom";
 
 test.describe("example tests", () => {
+  let homepage;
+  let intro;
+
   test.beforeEach(async ({ page }) => {
-    await page.goto("/");
+    homepage = new Homepage(page);
+    intro = new DocsIntro(page);
+
+    await homepage.visit();
   });
 
-  test("visited page url is correct", async ({ page }) => {
-    await expect(page).toHaveURL("/");
+  test("visited page url is correct", async () => {
+    await expect(homepage.page).toHaveURL("/");
   });
 
-  test("homepage contains button 'Get Started'", async ({ page }) => {
-    await expect(page.locator("a[class *= 'getStarted']")).toBeVisible();
+  test("homepage contains button 'Get Started'", async () => {
+    await expect(homepage.locatorButton).toBeVisible();
   });
 
-  test("click on 'Get Started' button leads to intro page", async ({
-    page,
-  }) => {
-    await page.locator("a[class *= 'getStarted']").click();
+  test("click on 'Get Started' button leads to intro page", async () => {
+    await homepage.locatorButton.click();
 
-    await expect.soft(page).toHaveURL("/docs/intro");
-    await expect
-      .soft(page.locator("article header"))
-      .toHaveText("Installation");
+    await expect.soft(intro.page).toHaveURL("/docs/intro");
+    await expect.soft(intro.locatorHeader).toHaveText("Installation");
   });
 });

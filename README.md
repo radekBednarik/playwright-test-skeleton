@@ -7,11 +7,13 @@ This package will create a basic template of Playwright Test project with follow
 - Prettier is installed
 - Eslint and Prettier git precommit hooks are created, if user wants to
 - basic example tests are created in `/tests` folder
+- basic example of Page Object Model page representation
 - default Playwright Test configuration file is created
 
 ## Preconditions
 
-- Node.js LTS installed
+- [Node.js](https://nodejs.org) LTS installed
+  - versions 18.x and 20.x are supported and were tested
 - git installed
 - OS is supported by Playwright (Win10+, Ubuntu, Debian, MacOs). Details are [HERE](https://playwright.dev/docs/intro#system-requirements)
 
