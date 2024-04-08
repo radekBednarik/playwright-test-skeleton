@@ -13,6 +13,7 @@ const cliPrompt = async () => {
         { title: "JavaScript", value: "js" },
         { title: "TypeScript", value: "ts" },
       ],
+      initial: 1,
     },
     {
       type: "select",

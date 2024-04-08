@@ -73,7 +73,7 @@ const main = async () => {
   execSync("npm install", opts);
 
   // create default precommit hooks
-  if (hooks) {
+  if (hooks == true || hooks == "true") {
     console.log(chalk.green("Setting up precommit hooks..."));
     execSync("npx mrm@2 lint-staged", opts);
     // adjust package.json lint-staged prop to have needed values
