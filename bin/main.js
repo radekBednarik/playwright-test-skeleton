@@ -25,7 +25,7 @@ const adjustPackage = () => {
   }
 
   const pJson = JSON.parse(
-    readFileSync(join(projectDir, "package.json"), { encoding: "utf-8" })
+    readFileSync(join(projectDir, "package.json"), { encoding: "utf-8" }),
   );
 
   if (hasProp(pJson["lint-staged"], "*.js")) {
@@ -41,7 +41,7 @@ const adjustPackage = () => {
 
   writeFileSync(
     join(projectDir, "package.json"),
-    JSON.stringify(pJson, null, 2)
+    JSON.stringify(pJson, null, 2),
   );
 };
 
@@ -58,7 +58,7 @@ const main = async () => {
 
   const templateDir = join(
     __dirname,
-    lang === "ts" ? "../templates/ts" : "../templates/js"
+    lang === "ts" ? "../templates/ts" : "../templates/js",
   );
 
   copySync(templateDir, projectDir);
@@ -73,7 +73,7 @@ const main = async () => {
   execSync("npm install", opts);
 
   // create default precommit hooks
-  if (hooks == true || hooks == "true") {
+  if (hooks === true || hooks === "true") {
     console.log(chalk.green("Setting up precommit hooks..."));
     execSync("npx mrm@2 lint-staged", opts);
     // adjust package.json lint-staged prop to have needed values
@@ -84,8 +84,8 @@ const main = async () => {
   if (platform() === "linux") {
     console.log(
       chalk.green(
-        "Linux platform detected, setting up needed linux packages..."
-      )
+        "Linux platform detected, setting up needed linux packages...",
+      ),
     );
     execSync("npx playwright install-deps", opts);
   }
