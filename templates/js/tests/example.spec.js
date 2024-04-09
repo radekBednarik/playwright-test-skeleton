@@ -14,7 +14,7 @@ test.describe("example tests", () => {
   });
 
   test("visited page url is correct", async () => {
-    await expect(homepage.page).toHaveURL("/");
+    await expect(homepage.page).toHaveURL(homepage.url);
   });
 
   test("homepage contains button 'Get Started'", async () => {
@@ -24,7 +24,7 @@ test.describe("example tests", () => {
   test("click on 'Get Started' button leads to intro page", async () => {
     await homepage.locatorButton.click();
 
-    await expect.soft(intro.page).toHaveURL("/docs/intro");
+    await expect.soft(intro.page).toHaveURL(intro.url);
     await expect.soft(intro.locatorHeader).toHaveText("Installation");
   });
 });
