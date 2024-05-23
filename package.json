@@ -1,6 +1,6 @@
 {
   "name": "playwright-test-skeleton",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Package for creating Playwright Test skeleton project. Includes default linter, formatter and precommit-hooks settings.",
   "repository": {
     "type": "git",
@@ -20,8 +20,8 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "test": "npm link && mkdir __test-area__ && cd __test-area__ && npm link playwright-test-skeleton && npx playwright-test-skeleton --language=ts --precommitHooks=true && npx playwright test && cd ..",
-    "test-js": "npm link && mkdir __test-area__ && cd __test-area__ && npm link playwright-test-skeleton && npx playwright-test-skeleton --language=js --precommitHooks=false && npx playwright test && cd ..",
+    "test": "npm link && mkdir __test-area__ && cd __test-area__ && npm link playwright-test-skeleton && npx playwright-test-skeleton --language=ts --precommitHooks=true && npx playwright test && cd .. && npm run cleanup",
+    "test-js": "npm link && mkdir __test-area__ && cd __test-area__ && npm link playwright-test-skeleton && npx playwright-test-skeleton --language=js --precommitHooks=false && npx playwright test && cd .. && npm run cleanup",
     "cleanup": "rm -rf __test-area__"
   },
   "bin": {
