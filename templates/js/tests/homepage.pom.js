@@ -6,7 +6,7 @@ export default class Homepage extends BasePage {
 
     this.url = "/";
 
-    this.locatorButton = this.page.locator("a[class *= 'getStarted']");
+    this.locatorButton = this.page.getByRole("link", { name: "Get started" });
   }
 
   async visit() {
