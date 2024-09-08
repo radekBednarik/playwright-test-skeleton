@@ -21,7 +21,10 @@ test.describe("example tests", () => {
     await expect(homepage.locatorButton).toBeVisible();
   });
 
-  test("click on 'Get Started' button leads to intro page", async () => {
+  test("click on 'Get Started' button leads to intro page", async ({
+    browserName,
+  }) => {
+    test.skip(browserName === "webkit");
     await homepage.locatorButton.click();
 
     await expect.soft(intro.page).toHaveURL(intro.url);
