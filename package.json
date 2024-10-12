@@ -28,7 +28,7 @@
     "main": "bin/main.js"
   },
   "dependencies": {
-    "chalk": "^4.1.2",
+    "chalk": "^5.3.0",
     "fs-extra": "^11.2.0",
     "prompts": "^2.4.2",
     "yargs": "^17.7.2"
