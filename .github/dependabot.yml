@@ -3,14 +3,10 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "npm"
+    directories:
+      - "/"
+      - "/templates/js"
+      - "/templates/ts"
     schedule:
       interval: "weekly"
-    versioning-strategy: increase-if-necessary
-    allow:
-      - dependency-name: "chalk"
-      - dependency-name: "fs-extra"
-      - dependency-name: "prompts"
-      - dependency-name: "yargs"
-      
